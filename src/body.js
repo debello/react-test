@@ -2,39 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './acstyle.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Hello React!!
-//           </a>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
-
+import './css/bootstrap.min.css';
 
 const testing = 
   <p>Guía de Criaturas, Peinados... en Animal Crossing AC</p>;
 
-// const hairstyles =
-//   <div id="imagen-peinados" style={{display:table2}}>
-//     <img src="images/peinados_.png" class="img-fluid" />
-//     <img src="images/colores_.png" class="img-fluid" />
-//   </div>;
 class Tablas extends Component {
   constructor(props) {
     super(props);
@@ -44,20 +16,31 @@ class Tablas extends Component {
     }
   }
   showTable1() {
-    this.setState({
-      table1 : 'block'
-    })
+    if (this.state.table1 === 'none') {
+      this.setState({
+        table1 : 'block',
+        table2 : 'none'
+      }) 
+    }
+    else if (this.state.table1 === 'block') {
+      this.setState({
+        table1 :'none',
+        table2 : 'none'
+      })
+    }
   }
 
   showTable2() {
     if (this.state.table2 === 'none') {
       this.setState({
-        table2 : 'block'
+        table2 : 'block',
+        table1 :'none',
       }) 
     }
     else if (this.state.table2 === 'block') {
       this.setState({
-        table2 :'none'
+        table2 :'none',
+        table1 : 'none'
       })
     }
   }
@@ -72,10 +55,96 @@ class Tablas extends Component {
         <img src="images/peinados_.png" class="img-fluid" />
         <img src="images/colores_.png" class="img-fluid" />
       </div>;
+      <div id="tablas-bichos" style={{display:this.state.table1}}>
+      <ListaBichos />
+      </div>
+      
     </div>
     );
   }
 };
+
+
+class ListaBichos extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+          <div class="table-responsive">
+            <table class="table w-auto" >
+              <thead class="table-dark">
+                <tr>
+                  <th class="th-lg">Imagen</th>
+                  <th class="th-lg">Insecto</th>
+                  <th class="th-lg">Bayas</th>
+                  <th class="th-lg">Ubicacion</th>
+                  <th class="th-lg">Meses</th>
+                  <th class="th-lg">Horas</th>
+                </tr>
+              </thead>
+
+              <tbody class="table-dark">
+                <tr>
+                  <td><img src='' width="50px" /></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table w-auto" >
+              <thead class="table-dark">
+                <tr>
+                  <th class="th-lg">Imagen</th>
+                  <th class="th-lg">Pez</th>
+                  <th class="th-lg">Bayas</th>
+                  <th class="th-lg">Ubicacion</th>
+                  <th class="th-lg">Meses</th>
+                  <th class="th-lg">Horas</th>
+                </tr>
+              </thead>
+              <tbody class="table-dark">
+                <tr>
+                  <td><img src='' width="50px" /></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table w-auto" >
+              <thead class="table-dark">
+                <tr>
+                  <th class="th-lg">Imagen</th>
+                  <th class="th-lg">Animal Submarino</th>
+                  <th class="th-lg">Bayas</th>
+                  <th class="th-lg">Tamaño Sombra</th>
+                  <th class="th-lg">Meses</th>
+                  <th class="th-lg">Horas</th>
+                </tr>
+              </thead>
+              <tbody class="table-dark">
+                <tr>
+                  <td><img src='' width="50px" /></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    )
+  }
+}
 
 class Cuerpo extends Component {
   constructor(props) {
@@ -87,7 +156,7 @@ class Cuerpo extends Component {
 
   render() {
     return (
-    <div>
+    <div class="container limiter">
       {testing}
      <Tablas />
     </div>
