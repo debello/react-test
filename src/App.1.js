@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Cuerpo from './body.js';
-
 
 // class App extends Component {
 //   render() {
@@ -34,11 +32,12 @@ class TypesOfFood extends Component {
   }
   render() {
     return (
-      // <div className='App-header'>
-        <div>
-        
-        <Cuerpo />
-       </div> 
+      <div className='App-header'>
+        <h1 >Types of Food:{testing}</h1>
+        {/* change code below this line */}
+        <p >This is React, Lovin it!</p>
+        {/* change code above this line */}
+      </div>
     );
   }
 };
