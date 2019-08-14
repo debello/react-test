@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import './acstyle.css';
 import './css/bootstrap.min.css';
+import {ListaBichos, insectos2} from './listabichos.js';
+
 
 const testing = 
   <p>Guía de Criaturas, Peinados... en Animal Crossing AC</p>;
@@ -56,7 +58,7 @@ class Tablas extends Component {
         <img src="images/colores_.png" class="img-fluid" />
       </div>;
       <div id="tablas-bichos" style={{display:this.state.table1}}>
-      <ListaBichos />
+      <ListaBichos data={insectos2}/>
       </div>
       
     </div>
@@ -65,86 +67,7 @@ class Tablas extends Component {
 };
 
 
-class ListaBichos extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-          <div class="table-responsive">
-            <table class="table w-auto" >
-              <thead class="table-dark">
-                <tr>
-                  <th class="th-lg">Imagen</th>
-                  <th class="th-lg">Insecto</th>
-                  <th class="th-lg">Bayas</th>
-                  <th class="th-lg">Ubicacion</th>
-                  <th class="th-lg">Meses</th>
-                  <th class="th-lg">Horas</th>
-                </tr>
-              </thead>
 
-              <tbody class="table-dark">
-                <tr>
-                  <td><img src='' width="50px" /></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table w-auto" >
-              <thead class="table-dark">
-                <tr>
-                  <th class="th-lg">Imagen</th>
-                  <th class="th-lg">Pez</th>
-                  <th class="th-lg">Bayas</th>
-                  <th class="th-lg">Ubicacion</th>
-                  <th class="th-lg">Meses</th>
-                  <th class="th-lg">Horas</th>
-                </tr>
-              </thead>
-              <tbody class="table-dark">
-                <tr>
-                  <td><img src='' width="50px" /></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table w-auto" >
-              <thead class="table-dark">
-                <tr>
-                  <th class="th-lg">Imagen</th>
-                  <th class="th-lg">Animal Submarino</th>
-                  <th class="th-lg">Bayas</th>
-                  <th class="th-lg">Tamaño Sombra</th>
-                  <th class="th-lg">Meses</th>
-                  <th class="th-lg">Horas</th>
-                </tr>
-              </thead>
-              <tbody class="table-dark">
-                <tr>
-                  <td><img src='' width="50px" /></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-    )
-  }
-}
 
 class Cuerpo extends Component {
   constructor(props) {
